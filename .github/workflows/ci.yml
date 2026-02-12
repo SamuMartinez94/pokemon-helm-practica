@@ -28,7 +28,7 @@ jobs:
         uses: azure/setup-helm@v3
         with:
           version: v3.12.0
-        
+
       - name: Lint Helm chart
         run: helm lint node-chart
 
