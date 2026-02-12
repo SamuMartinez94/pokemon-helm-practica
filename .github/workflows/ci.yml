@@ -43,7 +43,7 @@ jobs:
 
       - name: Deploy Helm chart
         run: |
-          helm upgrade --install pokedex-node-chart node-chart \
+          helm upgrade --install pokedex node-chart \
             --set image.repository=pokedex-node-app \
             --set image.tag=latest \
             --wait
