@@ -1,0 +1,58 @@
+name: Node Pokedex CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: node-app
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.12.0
+        
+      - name: Lint Helm chart
+        run: helm lint node-chart
+
+      - name: Setup Kind Cluster
+        uses: helm/kind-action@v1.12.0
+        with:
+          cluster_name: pokedex-cluster
+
+      - name: Build Docker image
+        run: |
+          docker build -t pokedex-node-app:latest ./node-app
+          kind load docker-image pokedex-node-app:latest --name pokedex-cluster
+
+      - name: Deploy Helm chart
+        run: |
+          helm upgrade --install pokedex node-chart \
+            --set image.repository=pokedex-node-app \
+            --set image.tag=latest \
+            --wait
+
+      - name: Test Node app
+        run: |
+          kubectl wait --for=condition=Ready pod -l app.kubernetes.io/instance=pokedex --timeout=120s
+          POD_NAME=$(kubectl get pods -l app.kubernetes.io/instance=pokedex -o jsonpath="{.items[0].metadata.name}")
+          kubectl port-forward $POD_NAME 3000:3000 &
+          sleep 5
+          curl -s http://localhost:3000/pokemon/pikachu | grep "pikachu" || exit 1
