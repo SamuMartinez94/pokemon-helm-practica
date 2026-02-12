@@ -1,0 +1,618 @@
+[
+  {
+    "id": "722",
+    "name": {
+      "ja": "モクロー",
+      "en": "Rowlet"
+    }
+  },
+  {
+    "id": "723",
+    "name": {
+      "ja": "フクスロー",
+      "en": "Dartrix"
+    }
+  },
+  {
+    "id": "724",
+    "name": {
+      "ja": "ジュナイパー",
+      "en": "Decidueye"
+    }
+  },
+  {
+    "id": "725",
+    "name": {
+      "ja": "ニャビー",
+      "en": "Litten"
+    }
+  },
+  {
+    "id": "726",
+    "name": {
+      "ja": "ニャヒート",
+      "en": "Torracat"
+    }
+  },
+  {
+    "id": "727",
+    "name": {
+      "ja": "ガオガエン",
+      "en": "Incineroar"
+    }
+  },
+  {
+    "id": "728",
+    "name": {
+      "ja": "アシマリ",
+      "en": "Popplio"
+    }
+  },
+  {
+    "id": "729",
+    "name": {
+      "ja": "オシャマリ",
+      "en": "Brionne"
+    }
+  },
+  {
+    "id": "730",
+    "name": {
+      "ja": "アシレーヌ",
+      "en": "Primarina"
+    }
+  },
+  {
+    "id": "731",
+    "name": {
+      "ja": "ツツケラ",
+      "en": "Pikipek"
+    }
+  },
+  {
+    "id": "732",
+    "name": {
+      "ja": "ケララッパ",
+      "en": "Trumbeak"
+    }
+  },
+  {
+    "id": "733",
+    "name": {
+      "ja": "ドデカバシ",
+      "en": "Toucannon"
+    }
+  },
+  {
+    "id": "734",
+    "name": {
+      "ja": "ヤングース",
+      "en": "Yungoos"
+    }
+  },
+  {
+    "id": "735",
+    "name": {
+      "ja": "デカグース",
+      "en": "Gumshoos"
+    }
+  },
+  {
+    "id": "736",
+    "name": {
+      "ja": "アゴジムシ",
+      "en": "Grubbin"
+    }
+  },
+  {
+    "id": "737",
+    "name": {
+      "ja": "デンヂムシ",
+      "en": "Charjabug"
+    }
+  },
+  {
+    "id": "738",
+    "name": {
+      "ja": "クワガノン",
+      "en": "Vikavolt"
+    }
+  },
+  {
+    "id": "739",
+    "name": {
+      "ja": "マケンカニ",
+      "en": "Crabrawler"
+    }
+  },
+  {
+    "id": "740",
+    "name": {
+      "ja": "ケケンカニ",
+      "en": "Crabominable"
+    }
+  },
+  {
+    "id": "741",
+    "name": {
+      "ja": "オドリドリ",
+      "en": "Oricorio"
+    }
+  },
+  {
+    "id": "742",
+    "name": {
+      "ja": "アブリー",
+      "en": "Cutiefly"
+    }
+  },
+  {
+    "id": "743",
+    "name": {
+      "ja": "アブリボン",
+      "en": "Ribombee"
+    }
+  },
+  {
+    "id": "744",
+    "name": {
+      "ja": "イワンコ",
+      "en": "Rockruff"
+    }
+  },
+  {
+    "id": "745",
+    "name": {
+      "ja": "ルガルガン",
+      "en": "Lycanroc"
+    }
+  },
+  {
+    "id": "746",
+    "name": {
+      "ja": "ヨワシ",
+      "en": "Wishiwashi"
+    }
+  },
+  {
+    "id": "747",
+    "name": {
+      "ja": "ヒドイデ",
+      "en": "Mareanie"
+    }
+  },
+  {
+    "id": "748",
+    "name": {
+      "ja": "ドヒドイデ",
+      "en": "Toxapex"
+    }
+  },
+  {
+    "id": "749",
+    "name": {
+      "ja": "ドロバンコ",
+      "en": "Mudbray"
+    }
+  },
+  {
+    "id": "750",
+    "name": {
+      "ja": "バンバドロ",
+      "en": "Mudsdale"
+    }
+  },
+  {
+    "id": "751",
+    "name": {
+      "ja": "シズクモ",
+      "en": "Dewpider"
+    }
+  },
+  {
+    "id": "752",
+    "name": {
+      "ja": "オニシズクモ",
+      "en": "Araquanid"
+    }
+  },
+  {
+    "id": "753",
+    "name": {
+      "ja": "カリキリ",
+      "en": "Fomantis"
+    }
+  },
+  {
+    "id": "754",
+    "name": {
+      "ja": "ラランテス",
+      "en": "Lurantis"
+    }
+  },
+  {
+    "id": "755",
+    "name": {
+      "ja": "ネマシュ",
+      "en": "Morelull"
+    }
+  },
+  {
+    "id": "756",
+    "name": {
+      "ja": "マシェード",
+      "en": "Shiinotic"
+    }
+  },
+  {
+    "id": "757",
+    "name": {
+      "ja": "ヤトウモリ",
+      "en": "Salandit"
+    }
+  },
+  {
+    "id": "758",
+    "name": {
+      "ja": "エンニュート",
+      "en": "Salazzle"
+    }
+  },
+  {
+    "id": "759",
+    "name": {
+      "ja": "ヌイコグマ",
+      "en": "Stufful"
+    }
+  },
+  {
+    "id": "760",
+    "name": {
+      "ja": "キテルグマ",
+      "en": "Bewear"
+    }
+  },
+  {
+    "id": "761",
+    "name": {
+      "ja": "アマカジ",
+      "en": "Bounsweet"
+    }
+  },
+  {
+    "id": "762",
+    "name": {
+      "ja": "アママイコ",
+      "en": "Steenee"
+    }
+  },
+  {
+    "id": "763",
+    "name": {
+      "ja": "アマージョ",
+      "en": "Tsareena"
+    }
+  },
+  {
+    "id": "764",
+    "name": {
+      "ja": "キュワワー",
+      "en": "Comfey"
+    }
+  },
+  {
+    "id": "765",
+    "name": {
+      "ja": "ヤレユータン",
+      "en": "Oranguru"
+    }
+  },
+  {
+    "id": "766",
+    "name": {
+      "ja": "ナゲツケサル",
+      "en": "Passimian"
+    }
+  },
+  {
+    "id": "767",
+    "name": {
+      "ja": "コソクムシ",
+      "en": "Wimpod"
+    }
+  },
+  {
+    "id": "768",
+    "name": {
+      "ja": "グソクムシャ",
+      "en": "Golisopod"
+    }
+  },
+  {
+    "id": "769",
+    "name": {
+      "ja": "スナバァ",
+      "en": "Sandygast"
+    }
+  },
+  {
+    "id": "770",
+    "name": {
+      "ja": "シロデスナ",
+      "en": "Palossand"
+    }
+  },
+  {
+    "id": "771",
+    "name": {
+      "ja": "ナマコブシ",
+      "en": "Pyukumuku"
+    }
+  },
+  {
+    "id": "772",
+    "name": {
+      "ja": "タイプ：ヌル",
+      "en": "Type: Null"
+    }
+  },
+  {
+    "id": "773",
+    "name": {
+      "ja": "シルヴァディ",
+      "en": "Silvally"
+    }
+  },
+  {
+    "id": "774",
+    "name": {
+      "ja": "メテノ",
+      "en": "Minior"
+    }
+  },
+  {
+    "id": "775",
+    "name": {
+      "ja": "ネッコアラ",
+      "en": "Komala"
+    }
+  },
+  {
+    "id": "776",
+    "name": {
+      "ja": "バクガメス",
+      "en": "Turtonator"
+    }
+  },
+  {
+    "id": "777",
+    "name": {
+      "ja": "トゲデマル",
+      "en": "Togedemaru"
+    }
+  },
+  {
+    "id": "778",
+    "name": {
+      "ja": "ミミッキュ",
+      "en": "Mimikyu"
+    }
+  },
+  {
+    "id": "779",
+    "name": {
+      "ja": "ハギギシリ",
+      "en": "Bruxish"
+    }
+  },
+  {
+    "id": "780",
+    "name": {
+      "ja": "ジジーロン",
+      "en": "Drampa"
+    }
+  },
+  {
+    "id": "781",
+    "name": {
+      "ja": "ダダリン",
+      "en": "Dhelmise"
+    }
+  },
+  {
+    "id": "782",
+    "name": {
+      "ja": "ジャラコ",
+      "en": "Jangmo-o"
+    }
+  },
+  {
+    "id": "783",
+    "name": {
+      "ja": "ジャランゴ",
+      "en": "Hakamo-o"
+    }
+  },
+  {
+    "id": "784",
+    "name": {
+      "ja": "ジャラランガ",
+      "en": "Kommo-o"
+    }
+  },
+  {
+    "id": "785",
+    "name": {
+      "ja": "カプ・コケコ",
+      "en": "Tapu Koko"
+    }
+  },
+  {
+    "id": "786",
+    "name": {
+      "ja": "カプ・テテフ",
+      "en": "Tapu Lele"
+    }
+  },
+  {
+    "id": "787",
+    "name": {
+      "ja": "カプ・ブルル",
+      "en": "Tapu Bulu"
+    }
+  },
+  {
+    "id": "788",
+    "name": {
+      "ja": "カプ・レヒレ",
+      "en": "Tapu Fini"
+    }
+  },
+  {
+    "id": "789",
+    "name": {
+      "ja": "コスモッグ",
+      "en": "Cosmog"
+    }
+  },
+  {
+    "id": "790",
+    "name": {
+      "ja": "コスモウム",
+      "en": "Cosmoem"
+    }
+  },
+  {
+    "id": "791",
+    "name": {
+      "ja": "ソルガレオ",
+      "en": "Solgaleo"
+    }
+  },
+  {
+    "id": "792",
+    "name": {
+      "ja": "ルナアーラ",
+      "en": "Lunala"
+    }
+  },
+  {
+    "id": "793",
+    "name": {
+      "ja": "ウツロイド",
+      "en": "Nihilego"
+    }
+  },
+  {
+    "id": "794",
+    "name": {
+      "ja": "マッシブーン",
+      "en": "Buzzwole"
+    }
+  },
+  {
+    "id": "795",
+    "name": {
+      "ja": "フェローチェ",
+      "en": "Pheromosa"
+    }
+  },
+  {
+    "id": "796",
+    "name": {
+      "ja": "デンジュモク",
+      "en": "Xurkitree"
+    }
+  },
+  {
+    "id": "797",
+    "name": {
+      "ja": "テッカグヤ",
+      "en": "Celesteela"
+    }
+  },
+  {
+    "id": "798",
+    "name": {
+      "ja": "カミツルギ",
+      "en": "Kartana"
+    }
+  },
+  {
+    "id": "799",
+    "name": {
+      "ja": "アクジキング",
+      "en": "Guzzlord"
+    }
+  },
+  {
+    "id": "800",
+    "name": {
+      "ja": "ネクロズマ",
+      "en": "Necrozma"
+    }
+  },
+  {
+    "id": "801",
+    "name": {
+      "ja": "マギアナ",
+      "en": "Magearna"
+    }
+  },
+  {
+    "id": "802",
+    "name": {
+      "ja": "マーシャドー",
+      "en": "Marshadow"
+    }
+  },
+  {
+    "id": "803",
+    "name": {
+      "ja": "ベベノム",
+      "en": "Poipole"
+    }
+  },
+  {
+    "id": "804",
+    "name": {
+      "ja": "アーゴヨン",
+      "en": "Naganadel"
+    }
+  },
+  {
+    "id": "805",
+    "name": {
+      "ja": "ツンデツンデ",
+      "en": "Stakataka"
+    }
+  },
+  {
+    "id": "806",
+    "name": {
+      "ja": "ズガドーン",
+      "en": "Blacephalon"
+    }
+  },
+  {
+    "id": "807",
+    "name": {
+      "ja": "ゼラオラ",
+      "en": "Zeraora"
+    }
+  },
+  {
+    "id": "808",
+    "name": {
+      "ja": "メルタン",
+      "en": "Meltan"
+    }
+  },
+  {
+    "id": "809",
+    "name": {
+      "ja": "メルメタル",
+      "en": "Melmetal"
+    }
+  }
+]
