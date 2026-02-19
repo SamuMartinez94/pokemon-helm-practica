@@ -1,15 +1,16 @@
-const express = require("express");
-const fetch = require("node-fetch");
+const express = require('express');
+const Pokedex = require('pokedex-promise-v2');
+const path = require('path');
 
 const app = express();
-app.use(express.json());
+const pokedex = new Pokedex.default();
 
-app.get("/pokemon/:name", async (req, res) => {
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/pokemon/:name', async (req, res) => {
   try {
     const name = req.params.name.toLowerCase();
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    if (!response.ok) throw new Error("No encontrado");
-    const data = await response.json();
+    const data = await pokedex.getPokemonByName(name);
 
     const filtered = {
       name: data.name,
@@ -21,41 +22,15 @@ app.get("/pokemon/:name", async (req, res) => {
     };
 
     res.json(filtered);
-  } catch (err) {
+  } catch (error) {
     res.status(404).json({ message: "Pokémon no encontrado" });
   }
 });
 
-app.get("/", (req, res) => {
-  res.send(`
-    <html>
-      <head><meta charset="UTF-8"><title>Mi Pokédex</title></head>
-      <body>
-        <h1>Mi Pokédex</h1>
-        <input id="name" placeholder="Introduce el nombre del Pokémon"/>
-        <button onclick="search()">Buscar</button>
-        <div id="result"></div>
-
-        <script>
-          async function search() {
-            const name = document.getElementById("name").value;
-            const res = await fetch("/pokemon/" + name);
-            const data = await res.json();
-            if(data.message) {
-              document.getElementById("result").innerText = data.message;
-            } else {
-              document.getElementById("result").innerHTML = 
-                '<h2>' + data.name + ' (ID: ' + data.id + ')</h2>' +
-                '<img src="' + data.sprite + '" />' +
-                '<p>Tipos: ' + data.types.join(', ') + '</p>' +
-                '<p>Habilidades: ' + data.abilities.join(', ') + '</p>' +
-                '<p>Experiencia base: ' + data.base_experience + '</p>';
-            }
-          }
-        </script>
-      </body>
-    </html>
-  `);
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #ef5350; --bg: #1a1a2e; }
+        body { 
+            background: var(--bg); color: white; font-family: 'Montserrat', sans-serif;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border-radius: 20px; padding: 30px; width: 350px; border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); text-align: center;
+        }
+        input {
+            width: 80%; padding: 12px; border-radius: 25px; border: none; outline: none;
+            background: rgba(255,255,255,0.2); color: white; margin-bottom: 20px;
+        }
+        input::placeholder { color: #ccc; }
+        button {
+            background: var(--primary); border: none; padding: 10px 25px; border-radius: 25px;
+            color: white; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        button:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--primary); }
+        #result img { width: 150px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.5)); }
+        .type-tag {
+            background: var(--primary); padding: 5px 15px; border-radius: 15px;
+            font-size: 0.7em; margin: 5px; display: inline-block; text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Pokédex AI</h1>
+        <input type="text" id="name" placeholder="Escribe un Pokémon...">
+        <button onclick="search()">BUSCAR</button>
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        async function search() {
+            const name = document.getElementById("name").value.toLowerCase().trim();
+            if (!name) return;
+            const res = await fetch("/pokemon/" + name);
+            const data = await res.json();
+            const resultDiv = document.getElementById("result");
+
+            if (data.message) {
+                resultDiv.innerHTML = `<p>${data.message}</p>`;
+            } else {
+                resultDiv.innerHTML = `
+                    <h2 style="text-transform: capitalize;">${data.name} <span style="font-weight:300">#${data.id}</span></h2>
+                    <img src="${data.sprite}">
+                    <div>${data.types.map(t => `<span class="type-tag">${t}</span>`).join('')}</div>
+                    <div style="text-align: left; font-size: 0.9em; margin-top: 15px;">
+                        <p><b>Habilidades:</b> ${data.abilities.join(', ')}</p>
+                        <p><b>Experiencia:</b> ${data.base_experience}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -13,6 +13,7 @@
     "express": "^5.2.1",
     "node-fetch": "^2.7.0",
     "pokeapi-js-wrapper": "^1.2.8",
+    "pokedex-promise-v2": "^4.2.1",
     "pokedex.js": "^4.3.0"
   }
 }
