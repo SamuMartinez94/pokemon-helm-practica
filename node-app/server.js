@@ -8,12 +8,34 @@ const pokedex = new Pokedex.default();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//BASE DE DATOS
+
+const mongoose = require('mongoose');
+
+const mongoUser = process.env.MONGO_USER || 'admin';
+const mongoPass = process.env.MONGO_PASS || 'password123';
+const mongoHost = process.env.MONGO_HOST || 'localhost'; 
+
+const mongoURL = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:27017/pokedex?authSource=admin`;
+
+mongoose.connect(mongoURL)
+  .then(() => console.log("Conectado a MongoDB en el clúster"))
+  .catch(err => console.error("Error conectando a MongoDB:", err));
+
+const FavPokemon = mongoose.model('FavPokemon', {
+  name: String,
+  pokeId: Number,
+  sprite: String,
+  types: [String],
+  capturedAt: { type: Date, default: Date.now }
+});
+
 //POKÉMON + EVOLUCIONES
 app.get('/pokemon/:name', async (req, res) => {
   try {
     const name = req.params.name.toLowerCase();
 
-// atos básicos
+// Datos básicos
     const data = await pokedex.getPokemonByName(name);
 
 // Species (para evolución y descripción)
@@ -158,6 +180,28 @@ app.get('/habitat/:name', async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: "Hábitat no encontrado" });
   }
+});
+
+//MIS POKEMON
+app.post('/favorites', async (req, res) => {
+  try {
+    const nuevoFav = new FavPokemon({
+      name: req.body.name,
+      pokeId: req.body.id,
+      sprite: req.body.sprite,
+      types: req.body.types
+    });
+    await nuevoFav.save();
+    res.json({ message: `¡${req.body.name} guardado en la base de datos!` });
+  } catch (error) {
+    res.status(500).json({ message: "Error al guardar en la BD" });
+  }
+});
+
+// Ruta extra para ver todos tus capturados
+app.get('/favorites', async (req, res) => {
+  const favoritos = await FavPokemon.find();
+  res.json(favoritos);
 });
 
 //HOME

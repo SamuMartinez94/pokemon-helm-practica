@@ -49,6 +49,10 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+env:
+  MONGO_USER: "admin"
+  MONGO_PASS: "password123"
+  MONGO_HOST: "mongodb-service"
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
