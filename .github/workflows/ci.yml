@@ -50,6 +50,7 @@ jobs:
           helm upgrade --install pokedex node-chart \
             --set image.repository=pokedex-node-app \
             --set image.tag=latest \
+            --set image.pullPolicy=IfNotPresent \
             --wait --timeout 300s
 
       - name: Debug on failure
