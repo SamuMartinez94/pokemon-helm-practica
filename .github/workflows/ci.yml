@@ -44,11 +44,21 @@ jobs:
 
       - name: Deploy Helm chart
         run: |
+          kubectl apply -f mongodb.yaml
+          kubectl wait --for=condition=ready pod -l app=mongodb --timeout=120s
+
           helm upgrade --install pokedex node-chart \
             --set image.repository=pokedex-node-app \
             --set image.tag=latest \
-            --wait
+            --wait --timeout 300s
 
+      - name: Debug on failure
+        if: failure()
+        run: |
+          kubectl get pods
+          kubectl get services
+          kubectl describe pod -l app.kubernetes.io/name=pokedex
+          kubectl logs -l app.kubernetes.io/name=pokedex
       - name: Test Node app
         run: |
           kubectl wait --for=condition=Ready pod -l app.kubernetes.io/instance=pokedex --timeout=120s
