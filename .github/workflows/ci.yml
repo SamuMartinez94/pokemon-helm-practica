@@ -38,12 +38,12 @@ jobs:
           cluster_name: pokedex-cluster
 
       - name: Build Docker image
-          run: |
+        run: |
           docker build -t pokedex-node-app:latest ./node-app
           kind load docker-image pokedex-node-app:latest --name pokedex-cluster
 
       - name: Deploy MongoDB and Helm chart
-          run: |
+        run: |
           kubectl apply -f mongodb.yaml
           kubectl wait --for=condition=ready pod -l app=mongodb --timeout=120s
 
