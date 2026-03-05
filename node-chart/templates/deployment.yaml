@@ -45,7 +45,9 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
-              protocol: TCP          {{- with .Values.livenessProbe }}
+              protocol: TCP
+
+          {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
