@@ -34,7 +34,8 @@ spec:
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "pokedex-node-app:latest"
+          imagePullPolicy: Never
           env:
             - name: MONGO_USER
               value: {{ .Values.env.MONGO_USER | quote }}
