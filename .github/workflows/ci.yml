@@ -52,13 +52,13 @@ jobs:
             --set image.tag=latest \
             --set image.pullPolicy=Never \
             --set livenessProbe=null \
-            --set readinessProbe=null \
+            --set readinessProbe=null
 
-        sleep 15
-        echo "=== ESTADO DE LOS PODS ==="
-        kubectl get pods
-        echo "=== DESCRIPCIÓN DEL POD POKEDEX ==="
-        kubectl describe pod -l app.kubernetes.io/instance=pokedex
+          sleep 15
+          echo "=== ESTADO DE LOS PODS ==="
+          kubectl get pods
+          echo "=== DESCRIPCIÓN DEL POD POKEDEX ==="
+          kubectl describe pod -l app.kubernetes.io/instance=pokedex
 
       - name: Debug on failure
         if: failure()
