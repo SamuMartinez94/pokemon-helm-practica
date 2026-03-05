@@ -14,11 +14,13 @@ const mongoose = require('mongoose');
 
 const mongoUser = process.env.MONGO_USER || 'admin';
 const mongoPass = process.env.MONGO_PASS || 'password123';
-const mongoHost = process.env.MONGO_HOST || 'localhost'; 
+const mongoHost = process.env.MONGO_HOST || 'localhost';
 
 const mongoURL = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:27017/pokedex?authSource=admin`;
 
-mongoose.connect(mongoURL)
+mongoose.connect(mongoURL, {
+  serverSelectionTimeoutMS: 5000
+})
   .then(() => console.log("Conectado a MongoDB en el clúster"))
   .catch(err => console.error("Error conectando a MongoDB:", err));
 
